@@ -25,13 +25,13 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const navItems = [
     { path: '/', label: 'Home', icon: Home, color: 'from-blue-500 to-cyan-500' },
     // Master Documentation
-    { path: '/docs/part1', label: 'Getting Started', icon: Rocket, color: 'from-electric to-atom-primary' },
-    { path: '/docs/part2', label: 'Content Management', icon: FileEdit, color: 'from-electric to-atom-primary' },
-    { path: '/docs/part3', label: 'Developer Guide', icon: Code, color: 'from-electric to-atom-primary' },
-    { path: '/docs/part4', label: 'Technical Leads', icon: Shield, color: 'from-electric to-atom-primary' },
-    { path: '/docs/part5', label: 'Operations & Maintenance', icon: Wrench, color: 'from-electric to-atom-primary' },
-    { path: '/docs/part6', label: 'Deployment & Production', icon: Terminal, color: 'from-electric to-atom-primary' },
-    { path: '/docs/part7', label: 'Reference & Best Practices', icon: Star, color: 'from-electric to-atom-primary' },
+    { path: '/docs/getting-started', label: 'Getting Started', icon: Rocket, color: 'from-electric to-atom-primary' },
+    { path: '/docs/content-management', label: 'Content Management', icon: FileEdit, color: 'from-electric to-atom-primary' },
+    { path: '/docs/developer-guide', label: 'Developer Guide', icon: Code, color: 'from-electric to-atom-primary' },
+    { path: '/docs/technical-leads', label: 'Technical Leads', icon: Shield, color: 'from-electric to-atom-primary' },
+    { path: '/docs/operations-maintenance', label: 'Operations & Maintenance', icon: Wrench, color: 'from-electric to-atom-primary' },
+    { path: '/docs/deployment-production', label: 'Deployment & Production', icon: Terminal, color: 'from-electric to-atom-primary' },
+    { path: '/docs/reference-best-practices', label: 'Reference & Best Practices', icon: Star, color: 'from-electric to-atom-primary' },
   ]
 
   const isActive = (path: string) => location.pathname === path
