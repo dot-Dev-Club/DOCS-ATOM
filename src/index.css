@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ATOM Club Blue Theme */
+    --atom-primary: 217 100% 52%; /* #0B63FF */
+    --atom-primary-light: 217 100% 62%;
+    --atom-metallic: 200 10% 77%; /* #C0C6C9 */
+    --atom-metallic-light: 200 10% 87%;
+    
+    /* Electric Accents */
+    --electric: 186 100% 50%; /* Cyan electric */
+    --electric-glow: 186 100% 60%;
+    
+    /* Backgrounds */
+    --background: 222 47% 11%; /* Dark blue-gray */
+    --background-secondary: 217 33% 17%;
+    
+    /* Text Colors */
+    --card-text: 210 20% 88%;
+    --metallic-text: 200 10% 77%;
+  }
+
+  * {
+    @apply border-white/10;
+  }
+
+  body {
+    @apply bg-background text-card-text;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Card */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+    box-shadow: 0 8px 32px 0 rgba(11, 99, 255, 0.1);
+  }
+
+  /* Metallic Button */
+  .metallic-button {
+    @apply px-6 py-3 rounded-xl font-semibold;
+    @apply bg-gradient-to-r from-atom-primary to-electric;
+    @apply text-white shadow-lg;
+    @apply hover:shadow-electric hover:scale-105;
+    @apply transition-all duration-300;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-atom-primary via-electric to-atom-primary-light;
+    @apply bg-clip-text text-transparent;
+  }
+
+  /* Shadow Glow */
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(11, 99, 255, 0.3);
+  }
+
+  .shadow-electric {
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
+  }
+
+  /* Shimmer Effect */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent;
+    animation: shimmer 2s infinite;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.5s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background-secondary));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--atom-primary)), hsl(var(--electric)));
+  border-radius: 10px;
+  border: 2px solid hsl(var(--background-secondary));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--atom-primary-light)), hsl(var(--electric-glow)));
+  box-shadow: 0 0 10px hsl(var(--electric));
+}
