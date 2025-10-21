@@ -16,17 +16,15 @@ export default function Layout() {
       </div>
 
       <Navbar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
-      <div className="flex relative">
-        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        <main className="flex-1 p-6 lg:ml-64 mt-16 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            {/* Page transition wrapper */}
-            <div className="animate-fade-in">
-              <Outlet />
-            </div>
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <main className="flex-1 p-6 mt-16 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          {/* Page transition wrapper */}
+          <div className="animate-fade-in">
+            <Outlet />
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
 
       {/* Floating scroll to top button */}
       <button

@@ -1,4 +1,4 @@
-import { Calendar, Plus, Edit, Trash2, Users, MapPin, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
+import { Calendar, Plus, Edit, Trash2, Users, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
 
 export default function EventsPage() {
   const eventFeatures = [

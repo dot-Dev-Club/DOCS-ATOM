@@ -5,14 +5,14 @@ export default function GettingStartedPage() {
   const steps = [
     {
       number: '01',
-      title: 'System Requirements',
+      title: 'Prerequisites',
       icon: Server,
       color: 'from-blue-500 to-cyan-500',
       requirements: [
-        { label: 'PHP', value: 'Version 7.4 or higher' },
-        { label: 'MySQL', value: 'Version 5.7 or higher' },
-        { label: 'Web Server', value: 'Apache 2.4+ or Nginx' },
-        { label: 'PHP Extensions', value: 'mbstring, mysqli, pdo, gd, curl' }
+        { label: 'Node.js', value: '18+ (latest LTS recommended)' },
+        { label: 'npm or bun', value: 'Package manager' },
+        { label: 'Git', value: 'Version control' },
+        { label: 'Code Editor', value: 'VS Code (recommended)' }
       ]
     },
     {
@@ -21,13 +21,13 @@ export default function GettingStartedPage() {
       icon: Download,
       color: 'from-purple-500 to-pink-500',
       steps: [
-        'Download the website files from the provided source',
-        'Extract the ZIP file to your web server directory (htdocs/public_html)',
-        'Create a new MySQL database for the website',
-        'Import the provided SQL file into your database',
-        'Update the config.php file with your database credentials',
-        'Set proper file permissions (755 for directories, 644 for files)',
-        'Access your website URL in a web browser'
+        'Clone the repository: git clone https://github.com/atomclub/website.git',
+        'Navigate to project: cd website',
+        'Install dependencies: npm install',
+        'Copy environment file: cp .env.example .env',
+        'Start development server: npm run dev',
+        'Open browser: http://localhost:5173',
+        'Access admin panel: http://localhost:5173/admin'
       ]
     },
     {
@@ -37,8 +37,8 @@ export default function GettingStartedPage() {
       color: 'from-green-500 to-teal-500',
       credentials: {
         username: 'admin',
-        password: 'admin123',
-        url: 'yourwebsite.com/admin'
+        password: 'atomcms',
+        url: 'localhost:5173/admin'
       }
     }
   ]
@@ -195,6 +195,28 @@ if($conn === false){
 ?>`}
             </pre>
           </div>
+        </div>
+      </section>
+
+      {/* Available Commands */}
+      <section className="glass-card p-8">
+        <h2 className="text-3xl font-bold gradient-text mb-6">Available Commands</h2>
+        <div className="space-y-4">
+          {[
+            { command: 'npm run dev', desc: 'Start development server with hot reload' },
+            { command: 'npm run build', desc: 'Create optimized production build' },
+            { command: 'npm run preview', desc: 'Preview production build locally' },
+            { command: 'npm run lint', desc: 'Check for code style issues and errors' }
+          ].map((cmd, idx) => (
+            <div key={idx} className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-electric/30 transition-colors">
+              <div className="flex items-start justify-between gap-4 flex-wrap">
+                <code className="px-4 py-2 rounded bg-black/30 text-electric font-mono text-sm border border-electric/30">
+                  {cmd.command}
+                </code>
+                <span className="text-card-text text-sm flex-1 min-w-[200px]">{cmd.desc}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

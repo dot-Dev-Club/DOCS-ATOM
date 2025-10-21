@@ -1,4 +1,4 @@
-import { Palette, Settings, Code, Eye, Save } from 'lucide-react'
+import { Palette, Settings, Code, Eye } from 'lucide-react'
 
 export default function CustomizationPage() {
   return (

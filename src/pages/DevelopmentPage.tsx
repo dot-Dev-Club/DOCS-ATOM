@@ -1,4 +1,4 @@
-import { Code, GitBranch, Database, Terminal, FileCode, AlertCircle } from 'lucide-react'
+import { Code, Terminal, FileCode, AlertCircle } from 'lucide-react'
 
 export default function DevelopmentPage() {
   return (
@@ -22,9 +22,39 @@ export default function DevelopmentPage() {
         <h2 className="text-3xl font-bold gradient-text mb-6">Technology Stack</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { tech: 'Frontend', items: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5'] },
-            { tech: 'Backend', items: ['PHP 7.4+', 'MySQL 5.7+', 'Apache/Nginx', 'REST API'] },
-            { tech: 'Tools', items: ['Git', 'Composer', 'npm/yarn', 'VS Code'] }
+            { 
+              tech: 'Frontend', 
+              items: [
+                'React 18.3.1',
+                'TypeScript 5.8.3', 
+                'Vite 5.4.19',
+                'Tailwind CSS 3.4.17',
+                'Framer Motion 12',
+                'React Router DOM 6.30'
+              ] 
+            },
+            { 
+              tech: 'State & Data', 
+              items: [
+                'Context API',
+                'TanStack Query 5',
+                'React Hook Form',
+                'Zod validation',
+                'date-fns',
+                'Local Storage'
+              ] 
+            },
+            { 
+              tech: 'UI & Tools', 
+              items: [
+                'Shadcn/UI',
+                'Radix UI',
+                'Lucide React',
+                'EmailJS',
+                'GSAP 3',
+                'OGL 1.0'
+              ] 
+            }
           ].map((stack, idx) => (
             <div key={idx} className="p-6 rounded-lg bg-white/5 border border-white/10">
               <h3 className="text-xl font-semibold mb-4 gradient-text">{stack.tech}</h3>
@@ -46,15 +76,21 @@ export default function DevelopmentPage() {
         <div className="glass-card p-6">
           <div className="bg-black/30 p-6 rounded-lg border border-white/10 font-mono text-sm">
             <div className="space-y-1">
-              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-blue-400">/public</span> - Public assets (CSS, JS, images)</div>
+              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-blue-400">/public</span> - Static assets (images, fonts)</div>
               <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-blue-400">/src</span> - Application source code</div>
-              <div className="ml-6"><span className="text-purple-400">/controllers</span> - Request handlers</div>
-              <div className="ml-6"><span className="text-purple-400">/models</span> - Database models</div>
-              <div className="ml-6"><span className="text-purple-400">/views</span> - Template files</div>
-              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-blue-400">/config</span> - Configuration files</div>
-              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-blue-400">/database</span> - Database migrations</div>
-              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-green-400">composer.json</span> - PHP dependencies</div>
-              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-green-400">.env</span> - Environment variables</div>
+              <div className="ml-6"><span className="text-purple-400">/components</span> - Reusable UI components</div>
+              <div className="ml-6"><span className="text-purple-400">/pages</span> - Route-based page components</div>
+              <div className="ml-6"><span className="text-purple-400">/layouts</span> - Layout wrappers</div>
+              <div className="ml-6"><span className="text-purple-400">/hooks</span> - Custom React hooks</div>
+              <div className="ml-6"><span className="text-purple-400">/lib</span> - Utility functions</div>
+              <div className="ml-6"><span className="text-purple-400">/contexts</span> - React context providers</div>
+              <div className="ml-6"><span className="text-purple-400">/config</span> - Configuration files</div>
+              <div className="ml-6"><span className="text-purple-400">/constants</span> - Static data constants</div>
+              <div className="ml-6"><span className="text-purple-400">/styles</span> - Global CSS styles</div>
+              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-green-400">package.json</span> - Dependencies</div>
+              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-green-400">tsconfig.json</span> - TypeScript config</div>
+              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-green-400">vite.config.ts</span> - Vite configuration</div>
+              <div><FileCode className="w-4 h-4 inline text-electric mr-2" /><span className="text-green-400">tailwind.config.js</span> - Tailwind settings</div>
             </div>
           </div>
         </div>
@@ -65,11 +101,11 @@ export default function DevelopmentPage() {
         <div className="space-y-4">
           {[
             { step: 'Clone Repository', command: 'git clone https://github.com/atomclub/website.git' },
-            { step: 'Install Dependencies', command: 'composer install && npm install' },
-            { step: 'Configure Environment', command: 'cp .env.example .env' },
-            { step: 'Generate App Key', command: 'php artisan key:generate' },
-            { step: 'Run Migrations', command: 'php artisan migrate' },
-            { step: 'Start Dev Server', command: 'php artisan serve' }
+            { step: 'Install Dependencies', command: 'npm install' },
+            { step: 'Copy Environment', command: 'cp .env.example .env' },
+            { step: 'Start Dev Server', command: 'npm run dev' },
+            { step: 'Open Browser', command: 'http://localhost:5173' },
+            { step: 'Build for Production', command: 'npm run build' }
           ].map((item, idx) => (
             <div key={idx} className="p-4 rounded-lg bg-white/5 border border-white/10">
               <div className="flex items-center gap-3 mb-2">
@@ -111,6 +147,45 @@ export default function DevelopmentPage() {
         </div>
       </section>
 
+      {/* Deployment Options */}
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold gradient-text">Deployment Options</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              platform: 'Vercel',
+              steps: ['npm i -g vercel', 'vercel login', 'vercel', 'Auto-deploy on push']
+            },
+            {
+              platform: 'Netlify',
+              steps: ['Connect GitHub', 'Build: npm run build', 'Publish: dist/', 'Auto-deploy']
+            },
+            {
+              platform: 'Firebase',
+              steps: ['firebase init', 'npm run build', 'firebase deploy', 'Custom domain']
+            },
+            {
+              platform: 'Traditional',
+              steps: ['npm run build', 'Upload /dist via FTP', 'Configure SSL', 'Set redirects']
+            }
+          ].map((option, idx) => (
+            <div key={idx} className="glass-card p-6">
+              <h3 className="text-xl font-semibold mb-4 gradient-text">{option.platform}</h3>
+              <div className="space-y-2">
+                {option.steps.map((step, sIdx) => (
+                  <div key={sIdx} className="flex items-start gap-2 text-sm">
+                    <div className="w-5 h-5 rounded bg-gradient-to-br from-atom-primary to-electric flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                      {sIdx + 1}
+                    </div>
+                    <span className="text-card-text">{step}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="glass-card p-6 border-l-4 border-yellow-500">
         <div className="flex items-start gap-4">
           <AlertCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
@@ -119,12 +194,13 @@ export default function DevelopmentPage() {
             <div className="space-y-2">
               {[
                 'Always work on a feature branch, never directly on main',
-                'Write meaningful commit messages',
-                'Test changes locally before pushing',
-                'Follow PSR coding standards for PHP',
-                'Document new features and API endpoints',
-                'Keep dependencies up to date',
-                'Use environment variables for sensitive data'
+                'Write meaningful commit messages using semantic format',
+                'Test changes locally before pushing to repository',
+                'Use TypeScript interfaces for all data structures',
+                'Follow React best practices (functional components, hooks)',
+                'Keep dependencies up to date regularly',
+                'Use environment variables for API keys and sensitive data',
+                'Write tests for critical components and functions'
               ].map((tip, idx) => (
                 <div key={idx} className="flex items-start gap-2">
                   <Terminal className="w-4 h-4 text-electric flex-shrink-0 mt-0.5" />

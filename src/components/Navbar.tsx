@@ -29,7 +29,7 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
           <div className="flex items-center gap-4">
             <button
               onClick={onMenuClick}
-              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+              className="p-2 rounded-lg hover:bg-white/10 transition-colors"
             >
               <Menu className="w-6 h-6 text-white" />
             </button>
