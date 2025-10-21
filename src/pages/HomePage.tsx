@@ -1,28 +1,56 @@
 import { Link } from 'react-router-dom'
-import { BookOpen, Rocket, Zap, Code } from 'lucide-react'
+import { Rocket, Zap, Code, FileEdit, Terminal, Wrench, Star, Shield } from 'lucide-react'
 
 export default function HomePage() {
-  const quickLinks = [
+  const masterDocumentation = [
     {
-      title: 'Introduction',
-      description: 'Learn about the ATOM Club website and its features',
-      icon: BookOpen,
-      path: '/introduction',
+      title: 'Getting Started',
+      description: 'Installation, setup, and your first deployment',
+      icon: Rocket,
+      path: '/docs/part1',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Getting Started',
-      description: 'Installation and setup guide for the website',
-      icon: Rocket,
-      path: '/getting-started',
+      title: 'Content Management',
+      description: 'Managing content, events, team, and gallery',
+      icon: FileEdit,
+      path: '/docs/part2',
       color: 'from-purple-500 to-pink-500'
     },
     {
-      title: 'Understanding',
-      description: 'Architecture and structure of the platform',
+      title: 'Developer Guide',
+      description: 'Technical documentation and API reference',
       icon: Code,
-      path: '/understanding',
+      path: '/docs/part3',
       color: 'from-green-500 to-teal-500'
+    },
+    {
+      title: 'Technical Leads',
+      description: 'Leadership, team management, and user roles',
+      icon: Shield,
+      path: '/docs/part4',
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      title: 'Operations & Maintenance',
+      description: 'Monitoring, backups, and troubleshooting',
+      icon: Wrench,
+      path: '/docs/part5',
+      color: 'from-cyan-500 to-blue-500'
+    },
+    {
+      title: 'Deployment & Production',
+      description: 'Production deployment and security',
+      icon: Terminal,
+      path: '/docs/part6',
+      color: 'from-pink-500 to-purple-500'
+    },
+    {
+      title: 'Reference & Best Practices',
+      description: 'Quick reference, FAQ, and best practices',
+      icon: Star,
+      path: '/docs/part7',
+      color: 'from-yellow-500 to-orange-500'
     }
   ]
 
@@ -43,33 +71,33 @@ export default function HomePage() {
           Everything you need to manage and understand the platform.
         </p>
         <div className="flex items-center justify-center gap-4">
-          <Link to="/introduction" className="metallic-button">
+          <Link to="/docs/part1" className="metallic-button">
             Get Started
           </Link>
-          <Link to="/understanding" className="glass-card px-6 py-3 rounded-xl hover:shadow-glow transition-all">
-            Learn More
+          <Link to="/docs/part3" className="glass-card px-6 py-3 rounded-xl hover:shadow-glow transition-all">
+            Developer Guide
           </Link>
         </div>
       </section>
 
-      {/* Quick Links */}
+      {/* Master Documentation */}
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold gradient-text text-center mb-8">Quick Start</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {quickLinks.map((link, idx) => {
-            const Icon = link.icon
+        <h2 className="text-3xl font-bold gradient-text text-center mb-8">Master Documentation</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {masterDocumentation.map((doc, idx) => {
+            const Icon = doc.icon
             return (
               <Link
                 key={idx}
-                to={link.path}
+                to={doc.path}
                 className="glass-card p-6 group hover:shadow-electric transition-all duration-300 animate-slide-down"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${link.color} p-3 mb-4 group-hover:scale-110 transition-transform shadow-glow`}>
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${doc.color} p-3 mb-4 group-hover:scale-110 transition-transform shadow-glow`}>
                   <Icon className="w-full h-full text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 gradient-text">{link.title}</h3>
-                <p className="text-card-text leading-relaxed">{link.description}</p>
+                <h3 className="text-xl font-semibold mb-3 gradient-text">{doc.title}</h3>
+                <p className="text-card-text leading-relaxed">{doc.description}</p>
               </Link>
             )
           })}
@@ -81,14 +109,14 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold gradient-text mb-6">What's Included</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            'Complete installation guide',
-            'Admin panel documentation',
-            'Content management tutorials',
-            'User management guides',
-            'Event system documentation',
-            'Troubleshooting tips',
-            'Best practices',
-            'FAQ section'
+            'Complete installation and setup guide',
+            'Content and event management',
+            'Developer API documentation',
+            'Team and user management',
+            'Operations and maintenance guides',
+            'Production deployment strategies',
+            'Best practices and FAQ',
+            'Troubleshooting and support'
           ].map((feature, idx) => (
             <div key={idx} className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-electric shimmer" />

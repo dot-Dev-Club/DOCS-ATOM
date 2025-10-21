@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Home, BookOpen, Rocket, Code, Layout, Shield, FileEdit, Users, Calendar, Image, Palette, Terminal, Wrench, Star, HelpCircle, X } from 'lucide-react'
+import { Home, Rocket, Code, Shield, FileEdit, Terminal, Wrench, Star, X, BookOpen } from 'lucide-react'
 import { useEffect } from 'react'
 
 interface SidebarProps {
@@ -24,20 +24,14 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   const navItems = [
     { path: '/', label: 'Home', icon: Home, color: 'from-blue-500 to-cyan-500' },
-    { path: '/introduction', label: 'Introduction', icon: BookOpen, color: 'from-purple-500 to-pink-500' },
-    { path: '/getting-started', label: 'Getting Started', icon: Rocket, color: 'from-green-500 to-teal-500' },
-    { path: '/understanding', label: 'Understanding', icon: Code, color: 'from-orange-500 to-red-500' },
-    { path: '/navigating', label: 'Navigating', icon: Layout, color: 'from-blue-500 to-purple-500' },
-    { path: '/admin-panel', label: 'Admin Panel', icon: Shield, color: 'from-red-500 to-pink-500' },
-    { path: '/managing-content', label: 'Managing Content', icon: FileEdit, color: 'from-cyan-500 to-blue-500' },
-    { path: '/user-management', label: 'User Management', icon: Users, color: 'from-purple-500 to-indigo-500' },
-    { path: '/events', label: 'Events', icon: Calendar, color: 'from-green-500 to-emerald-500' },
-    { path: '/gallery', label: 'Gallery', icon: Image, color: 'from-pink-500 to-rose-500' },
-    { path: '/customization', label: 'Customization', icon: Palette, color: 'from-yellow-500 to-orange-500' },
-    { path: '/development', label: 'Development', icon: Terminal, color: 'from-gray-500 to-slate-500' },
-    { path: '/troubleshooting', label: 'Troubleshooting', icon: Wrench, color: 'from-red-500 to-orange-500' },
-    { path: '/best-practices', label: 'Best Practices', icon: Star, color: 'from-yellow-500 to-amber-500' },
-    { path: '/faq', label: 'FAQ', icon: HelpCircle, color: 'from-blue-500 to-cyan-500' },
+    // Master Documentation
+    { path: '/docs/getting-started', label: 'Getting Started', icon: Rocket, color: 'from-electric to-atom-primary' },
+    { path: '/docs/content-management', label: 'Content Management', icon: FileEdit, color: 'from-electric to-atom-primary' },
+    { path: '/docs/developer-guide', label: 'Developer Guide', icon: Code, color: 'from-electric to-atom-primary' },
+    { path: '/docs/technical-leads', label: 'Technical Leads', icon: Shield, color: 'from-electric to-atom-primary' },
+    { path: '/docs/operations-maintenance', label: 'Operations & Maintenance', icon: Wrench, color: 'from-electric to-atom-primary' },
+    { path: '/docs/deployment-production', label: 'Deployment & Production', icon: Terminal, color: 'from-electric to-atom-primary' },
+    { path: '/docs/reference-best-practices', label: 'Reference & Best Practices', icon: Star, color: 'from-electric to-atom-primary' },
   ]
 
   const isActive = (path: string) => location.pathname === path
@@ -66,12 +60,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             : 'opacity-0 scale-95 pointer-events-none'
         }`}
       >
-        <div className="glass-card p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-2xl relative h-full md:h-auto flex flex-col">
+        <div className="glass-card p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-2xl relative h-full md:max-h-[85vh] flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between mb-4 sm:mb-6 md:mb-8 pb-4 sm:pb-5 md:pb-6 border-b border-white/10 flex-shrink-0">
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br from-atom-primary to-electric shadow-glow">
-                <Layout className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-white" />
+                <BookOpen className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-white" />
               </div>
               <div>
                 <h2 className="text-lg sm:text-xl md:text-2xl font-bold gradient-text">Navigation</h2>
@@ -90,8 +84,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           </div>
 
           {/* Grid Navigation - Dynamic & Responsive */}
-          <nav className="overflow-y-auto overflow-x-hidden pr-1 sm:pr-2 scrollbar-thin scrollbar-thumb-electric scrollbar-track-white/5 
-            flex-1 -webkit-overflow-scrolling-touch">
+          <nav className="overflow-y-auto overflow-x-hidden pr-1 sm:pr-2 scrollbar-thin scrollbar-thumb-electric/60 scrollbar-track-transparent hover:scrollbar-thumb-electric/80 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-w-2 flex-1 -webkit-overflow-scrolling-touch">
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 pb-4">
               {navItems.map((item) => {
                 const Icon = item.icon

@@ -1,42 +1,36 @@
 import { Routes, Route } from 'react-router-dom'
 import Layout from './layouts/Layout'
 import HomePage from './pages/HomePage'
-import IntroductionPage from './pages/IntroductionPage'
-import GettingStartedPage from './pages/GettingStartedPage'
-import UnderstandingPage from './pages/UnderstandingPage'
-import NavigatingPage from './pages/NavigatingPage'
-import AdminPanelPage from './pages/AdminPanelPage'
-import ManagingContentPage from './pages/ManagingContentPage'
-import UserManagementPage from './pages/UserManagementPage'
-import EventsPage from './pages/EventsPage'
-import GalleryPage from './pages/GalleryPage'
-import CustomizationPage from './pages/CustomizationPage'
-import DevelopmentPage from './pages/DevelopmentPage'
-import TroubleshootingPage from './pages/TroubleshootingPage'
-import BestPracticesPage from './pages/BestPracticesPage'
-import FAQPage from './pages/FAQPage'
+import ScrollToTop from './components/ScrollToTop'
+
+// Master Documentation Pages
+import GettingStarted from './pages/GettingStarted'
+import ContentManagement from './pages/ContentManagement'
+import DeveloperGuide from './pages/DeveloperGuide'
+import TechnicalLeads from './pages/TechnicalLeads'
+import OperationsMaintenance from './pages/OperationsMaintenance'
+import DeploymentProduction from './pages/DeploymentProduction'
+import ReferenceBestPractices from './pages/ReferenceBestPractices'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="introduction" element={<IntroductionPage />} />
-        <Route path="getting-started" element={<GettingStartedPage />} />
-        <Route path="understanding" element={<UnderstandingPage />} />
-        <Route path="navigating" element={<NavigatingPage />} />
-        <Route path="admin-panel" element={<AdminPanelPage />} />
-        <Route path="managing-content" element={<ManagingContentPage />} />
-        <Route path="user-management" element={<UserManagementPage />} />
-        <Route path="events" element={<EventsPage />} />
-        <Route path="gallery" element={<GalleryPage />} />
-        <Route path="customization" element={<CustomizationPage />} />
-        <Route path="development" element={<DevelopmentPage />} />
-        <Route path="troubleshooting" element={<TroubleshootingPage />} />
-        <Route path="best-practices" element={<BestPracticesPage />} />
-        <Route path="faq" element={<FAQPage />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          
+          {/* Master Documentation Routes */}
+          <Route path="docs/getting-started" element={<GettingStarted />} />
+          <Route path="docs/content-management" element={<ContentManagement />} />
+          <Route path="docs/developer-guide" element={<DeveloperGuide />} />
+          <Route path="docs/technical-leads" element={<TechnicalLeads />} />
+          <Route path="docs/operations-maintenance" element={<OperationsMaintenance />} />
+          <Route path="docs/deployment-production" element={<DeploymentProduction />} />
+          <Route path="docs/reference-best-practices" element={<ReferenceBestPractices />} />
+        </Route>
+      </Routes>
+    </>
   )
 }
 
