@@ -1,0 +1,130 @@
+# Build outputs
+dist/
+dist-ssr/
+*.local
+
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+pnpm-debug.log
+lerna-debug.log
+
+# IDE and Editor
+.vscode/
+.idea/
+*.suo
+*.swp
+*.swo
+*~
+.DS_Store
+.env.local
+.env.*.local
+*.code-workspace
+
+# IDE Specific
+.vscode/settings.json
+.vscode/extensions.json
+.idea/
+.idea/**
+
+# Editor specific
+.sublime-project
+.sublime-workspace
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.production.local
+.env.development.local
+.env.test.local
+
+# Build cache
+.tsbuildinfo
+.tsbuildinfo.json
+
+# Vite cache
+.vite/
+
+# Turbopack
+.next/
+out/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Package manager lockfiles (optional - uncomment if you want to ignore them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Yarn Berry
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# macOS
+.AppleDouble
+.AppleDB
+
+# Windows
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Generated files
+.cache/
+.eslintcache
+
+# Misc
+.turbo/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# VS Code
+.VS_Code/
+launch.json
