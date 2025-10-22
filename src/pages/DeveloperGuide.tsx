@@ -296,7 +296,7 @@ npm run build         # Test production build`}
       {/* Navigation to Next/Previous Parts */}
       <section className="grid md:grid-cols-2 gap-4">
         <Link
-          to="/docs/part2"
+          to="/docs/content-management"
           className="glass-card p-6 hover:shadow-electric transition-all group"
         >
           <div className="flex items-center gap-3">
@@ -308,7 +308,7 @@ npm run build         # Test production build`}
           </div>
         </Link>
         <Link
-          to="/docs/part4"
+          to="/docs/technical-leads"
           className="glass-card p-6 hover:shadow-electric transition-all group"
         >
           <div className="flex items-center justify-between">

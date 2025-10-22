@@ -7,49 +7,49 @@ export default function HomePage() {
       title: 'Getting Started',
       description: 'Installation, setup, and your first deployment',
       icon: Rocket,
-      path: '/docs/part1',
+      path: '/docs/getting-started',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Content Management',
       description: 'Managing content, events, team, and gallery',
       icon: FileEdit,
-      path: '/docs/part2',
+      path: '/docs/content-management',
       color: 'from-purple-500 to-pink-500'
     },
     {
       title: 'Developer Guide',
       description: 'Technical documentation and API reference',
       icon: Code,
-      path: '/docs/part3',
+      path: '/docs/developer-guide',
       color: 'from-green-500 to-teal-500'
     },
     {
       title: 'Technical Leads',
       description: 'Leadership, team management, and user roles',
       icon: Shield,
-      path: '/docs/part4',
+      path: '/docs/technical-leads',
       color: 'from-orange-500 to-red-500'
     },
     {
       title: 'Operations & Maintenance',
       description: 'Monitoring, backups, and troubleshooting',
       icon: Wrench,
-      path: '/docs/part5',
+      path: '/docs/operations-maintenance',
       color: 'from-cyan-500 to-blue-500'
     },
     {
       title: 'Deployment & Production',
       description: 'Production deployment and security',
       icon: Terminal,
-      path: '/docs/part6',
+      path: '/docs/deployment-production',
       color: 'from-pink-500 to-purple-500'
     },
     {
       title: 'Reference & Best Practices',
       description: 'Quick reference, FAQ, and best practices',
       icon: Star,
-      path: '/docs/part7',
+      path: '/docs/reference-best-practices',
       color: 'from-yellow-500 to-orange-500'
     }
   ]
@@ -71,10 +71,10 @@ export default function HomePage() {
           Everything you need to manage and understand the platform.
         </p>
         <div className="flex items-center justify-center gap-4">
-          <Link to="/docs/part1" className="metallic-button">
+          <Link to="/docs/getting-started" className="metallic-button">
             Get Started
           </Link>
-          <Link to="/docs/part3" className="glass-card px-6 py-3 rounded-xl hover:shadow-glow transition-all">
+          <Link to="/docs/developer-guide" className="glass-card px-6 py-3 rounded-xl hover:shadow-glow transition-all">
             Developer Guide
           </Link>
         </div>

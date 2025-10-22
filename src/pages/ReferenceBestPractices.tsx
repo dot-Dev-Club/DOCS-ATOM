@@ -357,7 +357,7 @@ export const EventCard: FC<EventCardProps> = ({ title, date, image }) => {
       {/* Navigation - Previous & Home */}
       <section className="grid md:grid-cols-2 gap-4">
         <Link
-          to="/docs/part6"
+          to="/docs/deployment-production"
           className="glass-card p-6 hover:shadow-electric transition-all group"
         >
           <div className="flex items-center gap-3">
