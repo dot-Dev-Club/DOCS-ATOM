@@ -279,7 +279,7 @@ export default function Part2_ContentManagement() {
       {/* Navigation to Next/Previous Parts */}
       <section className="grid md:grid-cols-2 gap-4">
         <Link
-          to="/docs/part1"
+          to="/docs/getting-started"
           className="glass-card p-6 hover:shadow-electric transition-all group"
         >
           <div className="flex items-center gap-3">
@@ -291,7 +291,7 @@ export default function Part2_ContentManagement() {
           </div>
         </Link>
         <Link
-          to="/docs/part3"
+          to="/docs/developer-guide"
           className="glass-card p-6 hover:shadow-electric transition-all group"
         >
           <div className="flex items-center justify-between">

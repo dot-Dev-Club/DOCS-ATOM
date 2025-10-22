@@ -186,7 +186,7 @@ cd atom-website`
             <p className="text-card-text">Continue to Content Management</p>
           </div>
           <Link
-            to="/docs/part2"
+            to="/docs/content-management"
             className="metallic-button flex items-center gap-2 group"
           >
             Next Part
